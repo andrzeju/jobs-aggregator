@@ -4,10 +4,7 @@ import lombok.extern.java.Log;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.au.jobsaggregator.domain.joboffer.model.JobOffer;
-import pl.au.jobsaggregator.domain.joboffer.usecase.JobOfferCreate;
-import pl.au.jobsaggregator.domain.joboffer.usecase.JobOfferCreateUseCase;
-import pl.au.jobsaggregator.domain.joboffer.usecase.JobOfferQuery;
-import pl.au.jobsaggregator.domain.joboffer.usecase.JobOfferRetrieveUseCase;
+import pl.au.jobsaggregator.domain.joboffer.usecase.*;
 import pl.au.jobsaggregator.infrastructure.adapter.joboffer.cli.JobOfferCli;
 import pl.au.jobsaggregator.infrastructure.adapter.joboffer.persistence.InMemoryJobOfferDataAdapter;
 
@@ -24,8 +21,8 @@ public class JobAggreggatorUseCasesRunner implements CommandLineRunner {
 
         JobOfferCli cli = new JobOfferCli(
                 new JobOfferCreateUseCase(dataAdapter),
-                new JobOfferRetrieveUseCase(dataAdapter)
-        );
+                new JobOfferRetrieveUseCase(dataAdapter),
+                new JobOfferQueryUseCase(dataAdapter));
 
         log.info("Creating and retrieving articles...");
 

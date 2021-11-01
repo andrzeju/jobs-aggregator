@@ -10,10 +10,13 @@ public class JobOfferCli implements JobOfferPort {
 
     private final JobOfferCreateUseCase jobOfferCreateUseCase;
     private final JobOfferRetrieveUseCase jobOfferRetrieveUseCase;
+    private final JobOfferQueryUseCase jobOfferQueryUseCase;
 
-    public JobOfferCli(JobOfferCreateUseCase jobOfferCreateUseCase, JobOfferRetrieveUseCase jobOfferRetrieveUseCase) {
+    public JobOfferCli(JobOfferCreateUseCase jobOfferCreateUseCase, JobOfferRetrieveUseCase jobOfferRetrieveUseCase,
+                       JobOfferQueryUseCase jobOfferQueryUseCase) {
         this.jobOfferCreateUseCase = jobOfferCreateUseCase;
         this.jobOfferRetrieveUseCase = jobOfferRetrieveUseCase;
+        this.jobOfferQueryUseCase = jobOfferQueryUseCase;
     }
 
     @Override
@@ -28,6 +31,6 @@ public class JobOfferCli implements JobOfferPort {
 
     @Override
     public List<JobOffer> query(JobOfferQuery query) {
-        return null;
+        return jobOfferQueryUseCase.query(query);
     }
 }
