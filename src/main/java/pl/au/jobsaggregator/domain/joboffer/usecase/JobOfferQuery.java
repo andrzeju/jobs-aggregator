@@ -1,4 +1,5 @@
 package pl.au.jobsaggregator.domain.joboffer.usecase;
 
-public class JobOfferQuery {
-}
+public record JobOfferQuery(
+        String companyName
+) {}
