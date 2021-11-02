@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.au.jobsaggregator.domain.joboffer.model.JobOffer;
 import pl.au.jobsaggregator.domain.joboffer.usecase.*;
-import pl.au.jobsaggregator.infrastructure.adapter.joboffer.cli.JobOfferCli;
+import pl.au.jobsaggregator.infrastructure.adapter.joboffer.cli.JobOfferInputCli;
 import pl.au.jobsaggregator.infrastructure.adapter.joboffer.persistence.InMemoryJobOfferDataAdapter;
 
 import java.math.BigDecimal;
@@ -19,7 +19,7 @@ public class JobAggreggatorUseCasesRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         InMemoryJobOfferDataAdapter dataAdapter = new InMemoryJobOfferDataAdapter();
 
-        JobOfferCli cli = new JobOfferCli(
+        JobOfferInputCli cli = new JobOfferInputCli(
                 new JobOfferCreateUseCase(dataAdapter),
                 new JobOfferRetrieveUseCase(dataAdapter),
                 new JobOfferQueryUseCase(dataAdapter));

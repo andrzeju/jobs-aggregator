@@ -1,19 +1,19 @@
 package pl.au.jobsaggregator.infrastructure.adapter.joboffer.cli;
 
 import pl.au.jobsaggregator.domain.joboffer.model.JobOffer;
-import pl.au.jobsaggregator.domain.joboffer.port.JobOfferPort;
+import pl.au.jobsaggregator.domain.joboffer.port.JobOfferInputPort;
 import pl.au.jobsaggregator.domain.joboffer.usecase.*;
 
 import java.util.List;
 
-public class JobOfferCli implements JobOfferPort {
+public class JobOfferInputCli implements JobOfferInputPort {
 
     private final JobOfferCreateUseCase jobOfferCreateUseCase;
     private final JobOfferRetrieveUseCase jobOfferRetrieveUseCase;
     private final JobOfferQueryUseCase jobOfferQueryUseCase;
 
-    public JobOfferCli(JobOfferCreateUseCase jobOfferCreateUseCase, JobOfferRetrieveUseCase jobOfferRetrieveUseCase,
-                       JobOfferQueryUseCase jobOfferQueryUseCase) {
+    public JobOfferInputCli(JobOfferCreateUseCase jobOfferCreateUseCase, JobOfferRetrieveUseCase jobOfferRetrieveUseCase,
+                            JobOfferQueryUseCase jobOfferQueryUseCase) {
         this.jobOfferCreateUseCase = jobOfferCreateUseCase;
         this.jobOfferRetrieveUseCase = jobOfferRetrieveUseCase;
         this.jobOfferQueryUseCase = jobOfferQueryUseCase;

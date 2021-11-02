@@ -1,14 +1,14 @@
 package pl.au.jobsaggregator.domain.joboffer.usecase;
 
 import pl.au.jobsaggregator.domain.joboffer.model.JobOffer;
-import pl.au.jobsaggregator.domain.joboffer.port.JobOfferPort;
+import pl.au.jobsaggregator.domain.joboffer.port.JobOfferOutputPort;
 
 import java.util.List;
 
 public class JobOfferQueryUseCase {
-    private JobOfferPort jobOfferPort;
+    private JobOfferOutputPort jobOfferPort;
 
-    public JobOfferQueryUseCase(JobOfferPort jobOfferPort) {
+    public JobOfferQueryUseCase(JobOfferOutputPort jobOfferPort) {
         this.jobOfferPort = jobOfferPort;
     }
 

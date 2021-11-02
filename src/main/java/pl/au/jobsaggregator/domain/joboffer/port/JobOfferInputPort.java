@@ -6,7 +6,7 @@ import pl.au.jobsaggregator.domain.joboffer.usecase.JobOfferQuery;
 
 import java.util.List;
 
-public interface JobOfferPort {
+public interface JobOfferInputPort {
 
     JobOffer create(JobOfferCreate jobOffer);
 
