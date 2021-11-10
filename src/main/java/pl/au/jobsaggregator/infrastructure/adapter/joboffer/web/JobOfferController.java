@@ -3,8 +3,10 @@ package pl.au.jobsaggregator.infrastructure.adapter.joboffer.web;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pl.au.jobsaggregator.domain.joboffer.model.JobOffer;
 import pl.au.jobsaggregator.domain.joboffer.usecase.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -32,6 +34,11 @@ public class JobOfferController {
     @PostMapping
     public ResponseEntity<?> createJobOffer(@RequestBody JobOfferCreate jobOffer) {
         return ResponseEntity.ok(jobOfferCreateUseCase.create(jobOffer));
+    }
+
+    @PostMapping("/query")
+    public ResponseEntity<List<JobOffer>> findJobOffers(@RequestBody JobOfferQuery jobOfferQuery) {
+        return ResponseEntity.ok(jobOfferQueryUseCase.query(jobOfferQuery));
     }
 
 }
